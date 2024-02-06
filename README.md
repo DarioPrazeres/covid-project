@@ -1,7 +1,3 @@
-# wheather-App
-
-<!-- Please update value in the {}  -->
-
 <h1 align="center">Covid Project</h1>
 
 
@@ -11,11 +7,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://darioprazeres.github.io/Wheather-App/">
+    <a href="https://darioprazeres.github.io/covid-project/">
       Demo
     </a>
     <span> | </span>
-    <a href="//github.com/DarioPrazeres/Wheather-App">
+    <a href="//github.com/DarioPrazeres/covid-project">
       Solution
     </a>
   </h3>
@@ -81,7 +77,7 @@
 <p>Run this comand in terminal: <code>npm install</code></p>
 <p>Then open director till docs and open the index.html file with your Browser.</p>
 
-- Para mais Detalhes:[INSTRUCOES.md]([https://code.visualstudio.com/](https://github.com/DarioPrazeres/covid-project/blob/main/INSTRUCOES.md))
+- [Para mais Detalhes: INSTRUCOES.md](https://github.com/DarioPrazeres/covid-project/blob/main/INSTRUCOES.md)
 ## Contact
 
 - GitHub [@DarioPrazeres](https://github.com/DarioPrazeres)
