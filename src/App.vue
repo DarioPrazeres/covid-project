@@ -1,30 +1,43 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+export default {
+  data() {
+      return {
+        activeComp: ''
+      }
+    }
+}
 </script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <header>
+    <p>Como Deseja Ver os Dados?</p>
+    <router-link to="/">Grafico</router-link>
+    <router-link to="/countries">Dados por País</router-link><br>
+  </header>
+  <div id="project">
+    <router-view></router-view>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
+
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
+  #project{
+    width: 100%;
+  }
+  a {
+    display: inline-block;
+    background-color: black;
+    border-radius: 8px;
+    color: white;
+    padding: 7px;
+    margin: 10px;
+  }
+  a:hover,
+  a.router-link-active {
+    background-color: rgb(110, 79, 13);
+  }
+  div {
+    padding: 20px;
+  }
 </style>
