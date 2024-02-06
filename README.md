@@ -30,9 +30,11 @@
 
 ## Overview
 
-![screenshot](https://github.com/DarioPrazeres/Wheather-App/blob/main/src/icon/Banner.png)
 
-<p>The LWheather-App allow to search a wheather in the some city. And show a lot information about it. This information can be a temperature of all day, some hours and humity. This information came from API Open Weather Map</p>
+
+<p>Once you have completed your challenge, publish a public repository on GitHub and send us the link.
+Use the COVID API to display the number of confirmed cases in each country in a bar chart.
+Any library can be used to present the chart.</p>
 
 
 ### Built With
