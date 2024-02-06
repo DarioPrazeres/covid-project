@@ -1,13 +1,11 @@
 <template>
   <div>
-    
     <div id="grafic">
       <button id="btn-full-grafic" @click="showFullChart">Ver Gráfico Completo</button>
       <div id="chart_div"></div>
       <div id="control-grafic">
         <button @click="prevPage" :disabled="currentPage === 0">Anterior</button>
         <button @click="nextPage" :disabled="currentPage === totalPages">Próximo</button>
-        
       </div>
     </div>
   </div>
@@ -46,21 +44,22 @@ export default {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Country');
       data.addColumn('number', 'Confirmed Cases');
+      data.addColumn('number', 'Deaths'); // Adicionando a série para mortes
       data.addRows(formattedData);
       var options = {
-        title: 'Casos Confirmados por País (Top 15)',
+        title: 'Casos Confirmados e Mortes por País (Top 15)',
         hAxis: {
           title: 'País'
         },
         vAxis: {
-          title: 'Casos Confirmados'
+          title: 'Casos Confirmados e Mortes'
         }
       };
       var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
       chart.draw(data, options);
     },
     formatData(data) {
-      return data.map(countryData => [countryData.country, countryData.confirmed]);
+      return data.map(countryData => [countryData.country, countryData.confirmed, countryData.deaths]); // Adicionando mortes aos dados formatados
     },
     getCurrentPageData() {
       const startIndex = this.currentPage * this.pageSize;
@@ -84,14 +83,15 @@ export default {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Country');
       data.addColumn('number', 'Confirmed Cases');
+      data.addColumn('number', 'Deaths');
       data.addRows(formattedData);
       var options = {
-        title: 'Casos Confirmados por País',
+        title: 'Casos Confirmados e Mortes por País',
         hAxis: {
           title: 'País'
         },
         vAxis: {
-          title: 'Casos Confirmados'
+          title: 'Casos Confirmados e Mortes'
         }
       };
       var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
@@ -102,28 +102,28 @@ export default {
 </script>
 
 <style>
-  #grafic{
-    position: relative;
-  }
-  #chart_div {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 600px;
-  }
-  #btn-full-grafic{
-    border: solid 1px #0B5ED7;
-    background-color: #157347;
-    color: #FFF;
-  }
-  #control-grafic{
-    top: 0px;
-    right: 10px;
-    position: absolute;
-  }
-  #control-grafic button{
-    border: solid 1px #0B5ED7;
-    background-color: #0B5ED7;
-    color: #FFF;
-  }
+#grafic {
+  position: relative;
+}
+#chart_div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 600px;
+}
+#btn-full-grafic {
+  border: solid 1px #0B5ED7;
+  background-color: #157347;
+  color: #FFF;
+}
+#control-grafic {
+  top: 0px;
+  right: 10px;
+  position: absolute;
+}
+#control-grafic button {
+  border: solid 1px #0B5ED7;
+  background-color: #0B5ED7;
+  color: #FFF;
+}
 </style>
